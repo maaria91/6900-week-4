@@ -10,17 +10,16 @@ d3.timeSeries = function() {//WRAPPER -- IMPORTANT in html file the D# is the FI
     var w = 800,
         h = 600,
         m = {t: 25, r: 50, b: 25, l: 50},//this is the margin of the "drawing space"  ***
-        layout = d3.layout.histogram(),
+        //layout = d3.layout.histogram(),
         chartW = w - m.l - m.r,
         chartH = h - m.t - m.b,// this and the above are the CHART or hist H and W
         timeRange = [new Date(), new Date()],// we set this up HERE to use under.. also it is specified in READ me.. start date to end date
-        binSize = d3.time.day,
+        binSize = d3.time.week,
         maxY = 1000, //maximum number of trips to show on the y axis   ***
         scaleX = d3.time.scale().range([0, chartW]).domain(timeRange),//setting the AXIS
         scaleY = d3.scale.linear().range([chartH, 0]).domain([0, maxY]),
         valueAccessor = function (d) {
-            return d;
-        }; //accessor needs function
+            return d;}; //accessor needs function
 
 
     //2-the EXPORT -- THAT gets RETURNED in the end
