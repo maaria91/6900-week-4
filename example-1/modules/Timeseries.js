@@ -64,12 +64,12 @@ d3.timeSeries = function(){
 		svg.attr('width',w).attr('height',h);
 
 		//Step 2: create layers of DOM individually
-		//2.1 line graph
+		//drawing the lines
 		svg.select('.line')
 			.select('path')
 			.datum(_d)
 			.attr('d',line);
-		//2.2 area
+		//and now area for the line
 		svg.select('.area')
 			.select('path')
 			.datum(_d)
